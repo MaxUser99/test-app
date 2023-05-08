@@ -1,0 +1,40 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+.heading {
+  margin-bottom: 3.125rem; /* 50px */
+  text-align: center;
+}
+.usersList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(270px, 370px);
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 3.125rem;
+}
+.moreButton {
+  margin-bottom: 8.75rem;
+}
+.hidden {
+  visibility: hidden;
+}
+@media screen and (min-width: 768px) {
+  .usersList {
+    grid-template-columns: repeat(2, minmax(270px, 370px));
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .usersList {
+    grid-template-columns: repeat(3, minmax(270px, 370px));
+    gap: 1.8125rem;
+  }
+}

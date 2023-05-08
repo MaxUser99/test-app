@@ -15,7 +15,7 @@
 
 .link {
   text-decoration: none;  
-  color: #000000DE;
+  color: #000000DE; /* TODO: move to vars */
   display: inline-block;
   box-sizing: border-box;
 }

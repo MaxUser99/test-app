@@ -1,0 +1,38 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white-color);
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1.25rem; /* 20px */
+  border-radius: 10px;
+}
+.card h3,
+.card li,
+.card a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+}
+.avatar {
+  border-radius: 50%;
+  width: 4.375rem;
+  height: 4.375rem;
+  margin-bottom: 1.25rem;
+}
+.name {
+  margin-bottom: 1.25rem;
+}
+.userInfo {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1.625rem;
+}
+.userInfo a {
+  text-decoration: none;
+  color: #000000de;
+}
