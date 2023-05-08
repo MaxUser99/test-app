@@ -2,30 +2,41 @@
   background-color: var(--white-color);
   display: flex;
   justify-content: center;
+  width: 100%;
 }
-
 .header { 
   display: flex;
   align-items: center;
   padding: 0.8125rem 1rem;
 }
-
 .logo {
   margin-right: auto;
 }
-
 .nav {}
-
 .ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
-
 .li {
   display: inline;
 }
 .li:not(:last-of-type) {
   margin-right: 0.625rem;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 0.8125rem 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    padding: 0.8125rem 3.75rem;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .header {
+    padding: 0.8125rem 0;
+  }
 }

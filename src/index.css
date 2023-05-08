@@ -30,3 +30,9 @@ body {
   /* TODO: remove it */
   /* width: 360px; */
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

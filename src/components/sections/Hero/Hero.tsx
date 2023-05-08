@@ -1,9 +1,10 @@
 import Button from '../../ui/Button';
+import Container from '../../ui/Container';
 import styles from './Hero.module.css';
 
 export default function Hero() {
   return (
-    <main className={styles.hero}>
+    <Container as='main' className={styles.hero}>
       <section className={styles.content}>
         <h1 className={styles.heading}>
           Test&nbsp;assignment for front-end developer
@@ -17,6 +18,6 @@ export default function Hero() {
         </p>
         <Button>Sign up</Button>
       </section>
-    </main>
+    </Container>
   );
 }
