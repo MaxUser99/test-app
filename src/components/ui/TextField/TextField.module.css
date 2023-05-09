@@ -1,0 +1,71 @@
+.textField {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background: var(--bg-color);
+}
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  bottom: 50%;
+  transform: translateY(50%);
+  position: absolute;
+  transition: 0.3s;
+  color: var(--text-gray);
+  padding: 0.125rem 0.25rem;
+  left: 1rem;
+  font-size: 1rem;
+  pointer-events: none;
+  margin-left: -0.25rem;
+}
+.textField:focus-within .label {
+  transform: translate(0) scale(0.75);
+  transform-origin: bottom left;
+  bottom: calc(100% - 0.75rem / 2);
+  background: inherit;
+}
+.input:not(:placeholder-shown) + .label {
+  transform: translate(0) scale(0.75);
+  transform-origin: bottom left;
+  bottom: calc(100% - 0.75rem / 2);
+  background: inherit;
+}
+.input {
+  background: inherit;
+  font-size: 1rem;
+  color: var(--text-black);
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+.input:focus {
+  outline: none;
+}
+.helperText {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  margin-top: 0.25rem;
+  margin-left: 1rem;
+  position: absolute;
+  top: 100%;
+}
+input::placeholder {
+  color: transparent;
+}
+.textFieldError input {
+  border-color: var(--error-color);
+}
+.textFieldError input:focus {
+  border-color: var(--error-color);
+}
+.textFieldError input:hover {
+  border-color: var(--error-color);
+}
+.textFieldError .label {
+  color: var(--error-color);
+}
+.textFieldError .helperText {
+  color: var(--error-color);
+}

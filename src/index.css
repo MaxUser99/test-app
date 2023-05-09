@@ -16,6 +16,10 @@ body {
   --secondary-color: #00bdd3;
   --white-color: #ffffff;
   --bg-color: #f8f8f8;
+  --error-color: #cb3d40;
+  --text-black: rgba(0, 0, 0, 0.87);
+  --text-gray: #7e7e7e;
+  --border-color: #d0cfcf;
   /* 
   --sm-breakpoint: 360px;
   --md-breakpoint: 768px;
@@ -24,6 +28,7 @@ body {
   */
 
   background: var(--bg-color);
+  color: var(--text-black);
 }
 
 #root {

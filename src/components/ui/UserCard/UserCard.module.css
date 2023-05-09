@@ -34,5 +34,5 @@
 }
 .userInfo a {
   text-decoration: none;
-  color: #000000de;
+  color: inherit;
 }
