@@ -21,7 +21,7 @@ export default function UserForm() {
   };
 
   return (
-    <Container className={styles.container} as='section'>
+    <Container className={styles.container} as='section' id='sign-up'>
       {mutation.isSuccess ? (
         <>
           <h2>User successfully registered</h2>

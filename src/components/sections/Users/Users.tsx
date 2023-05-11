@@ -29,7 +29,7 @@ export default function UsersList() {
   const hideLoadMoreButton = page >= (queryResponse?.total_pages || 0);
 
   return (
-    <Container className={styles.section} as='section'>
+    <Container className={styles.section} as='section' id='users'>
       <h2 className={styles.heading}>Working with GET request</h2>
       <ul className={styles.usersList}>
         {users.map((user) => (

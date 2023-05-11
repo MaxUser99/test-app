@@ -11,10 +11,10 @@ export default function Header() {
         <nav>
           <ul className={styles.ul}>
             <li className={styles.li}>
-              <LinkButton href='#'>Users</LinkButton>
+              <LinkButton href='#users'>Users</LinkButton>
             </li>
             <li className={styles.li}>
-              <LinkButton href='#'>Sign Up</LinkButton>
+              <LinkButton href='#sign-up'>Sign Up</LinkButton>
             </li>
           </ul>
         </nav>
