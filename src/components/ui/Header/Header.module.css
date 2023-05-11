@@ -1,12 +1,13 @@
-.wrapper {
+.header { 
   background-color: var(--white-color);
   display: flex;
   justify-content: center;
   width: 100%;
 }
-.header { 
+.wrapper {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   padding: 0.8125rem 1rem;
 }
 .logo {
@@ -26,17 +27,17 @@
   margin-right: 0.625rem;
 }
 @media screen and (min-width: 48em) {
-  .header {
+  .wrapper {
     padding: 0.8125rem 2rem;
   }
 }
 @media screen and (min-width: 64em) {
-  .header {
+  .wrapper {
     padding: 0.8125rem 3.75rem;
   }
 }
 @media screen and (min-width: 160em) {
-  .header {
+  .wrapper {
     padding: 0.8125rem 0;
   }
 }

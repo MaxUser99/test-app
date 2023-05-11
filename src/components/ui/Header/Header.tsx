@@ -5,8 +5,8 @@ import styles from './Header.module.css';
 
 export default function Header() {
   return (
-    <div className={styles.wrapper}>
-      <Container as='header' className={styles.header}>
+    <header className={styles.header}>
+      <Container className={styles.wrapper}>
         <img className={styles.logo} src={logo} alt='logo' />
         <nav>
           <ul className={styles.ul}>
@@ -19,6 +19,6 @@ export default function Header() {
           </ul>
         </nav>
       </Container>
-    </div>
+    </header>
   );
 }
