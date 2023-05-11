@@ -13,6 +13,11 @@
   background-color: var(--primary-color__hovered);
 }
 
+.button:disabled {
+  background: var(--disabled-color);
+  color: rgba(var(--white-color-rgb), 0.87);
+}
+
 .link {
   text-decoration: none;  
   color: #000000DE; /* TODO: move to vars */

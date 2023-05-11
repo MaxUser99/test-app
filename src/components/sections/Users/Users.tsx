@@ -4,21 +4,14 @@ import { useQuery } from 'react-query';
 import Container from '../../ui/Container';
 import styles from './Users.module.css';
 import UserCard from '../../ui/UserCard';
-import { IUsersQueryResponse } from '../../../types/IUsersQueryResponse';
 import Button from '../../ui/Button';
 import { IUser } from '../../../types/IUser';
-
-const USERS_PER_PAGE = 6;
+import { fetchUsers } from '../../../queries/userQueries';
 
 export default function UsersList() {
   const [page, setPage] = useState(1);
   const [users, setUsers] = useState<IUser[]>([]);
-  const { data: queryResponse } = useQuery<IUsersQueryResponse>({
-    queryKey: ['users', page],
-    queryFn: () =>
-      fetch(
-        `https://frontend-test-assignment-api.abz.agency/api/v1/users?page=${page}&count=${USERS_PER_PAGE}`
-      ).then((res) => res.json()),
+  const { data: queryResponse } = useQuery(['users', page], fetchUsers, {
     onSuccess: (data) => setUsers((prev) => [...prev, ...data.users]),
   });
 

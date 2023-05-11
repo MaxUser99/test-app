@@ -1,5 +1,6 @@
 import cx from 'classnames';
 import styles from './TextField.module.css';
+import { forwardRef } from 'react';
 
 interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
   // input props
@@ -12,24 +13,19 @@ interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: boolean;
 }
 
-export default function TextField({
-  helperText,
-  label,
-  error,
-  className,
-  id,
-  ...inputProps
-}: IProps) {
-  return (
-    <div
-      className={cx(styles.textField, className, {
-        [styles.textFieldError]: error,
-      })}>
-      <input className={styles.input} id={id} {...inputProps} />
-      <label className={styles.label} htmlFor={id}>
-        {label}
-      </label>
-      {helperText && <div className={styles.helperText}>{helperText}</div>}
-    </div>
-  );
-}
+export const TextField = forwardRef<HTMLInputElement, IProps>(
+  ({ helperText, label, error, className, id, ...inputProps }, ref) => {
+    return (
+      <div
+        className={cx(styles.textField, className, {
+          [styles.textFieldError]: error,
+        })}>
+        <input className={styles.input} id={id} {...inputProps} ref={ref} />
+        <label className={styles.label} htmlFor={id}>
+          {label}
+        </label>
+        {helperText && <div className={styles.helperText}>{helperText}</div>}
+      </div>
+    );
+  }
+);

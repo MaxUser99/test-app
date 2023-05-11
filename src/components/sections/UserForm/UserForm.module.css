@@ -4,7 +4,22 @@
   align-items: center;
   margin-bottom: 6.25rem;
 }
-
-.heading {
+.form {
+  width: 20.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.heading,
+.fileInput,
+.textInput {
   margin-bottom: 3.125rem;
+}
+.lastTextInput {
+  margin-bottom: 2.6875rem;
+}
+.radioGroup {
+  margin-bottom: 2.9375rem;
+}
+.submitButton {
+  margin: 0 auto;
 }

@@ -15,7 +15,7 @@
   width: 100%;
   overflow: hidden;
   display: grid;
-  grid-template-columns: minmax(270px, 370px);
+  grid-template-columns: minmax(16.867rem, 23.145rem); /*minmax(270px, 370px);*/
   justify-content: center;
   gap: 1.25rem;
   margin-bottom: 3.125rem;
@@ -26,15 +26,15 @@
 .hidden {
   visibility: hidden;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   .usersList {
-    grid-template-columns: repeat(2, minmax(270px, 370px));
+    grid-template-columns: repeat(2, minmax(16.867rem, 23.145rem));
     gap: 1rem;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64em) {
   .usersList {
-    grid-template-columns: repeat(3, minmax(270px, 370px));
+    grid-template-columns: repeat(3, minmax(16.867rem, 23.145rem));
     gap: 1.8125rem;
   }
 }

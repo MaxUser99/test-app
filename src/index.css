@@ -4,7 +4,8 @@
 }
 
 html {
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: 100%;
 }
 
 body {
@@ -15,16 +16,17 @@ body {
   --disabled-color: #b4b4b4;
   --secondary-color: #00bdd3;
   --white-color: #ffffff;
+  --white-color-rgb: 255, 255, 255;
   --bg-color: #f8f8f8;
   --error-color: #cb3d40;
   --text-black: rgba(0, 0, 0, 0.87);
   --text-gray: #7e7e7e;
   --border-color: #d0cfcf;
   /* 
-  --sm-breakpoint: 360px;
-  --md-breakpoint: 768px;
-  --lg-breakpoint: 1024px;
-  --xl-breakpoint: 2560px;
+  --sm-breakpoint: 360px; 22.5em
+  --md-breakpoint: 768px; 48em
+  --lg-breakpoint: 1024px; 64em
+  --xl-breakpoint: 2560px; 160em
   */
 
   background: var(--bg-color);

@@ -25,17 +25,17 @@
 .li:not(:last-of-type) {
   margin-right: 0.625rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   .header {
     padding: 0.8125rem 2rem;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 64em) {
   .header {
     padding: 0.8125rem 3.75rem;
   }
 }
-@media screen and (min-width: 2560px) {
+@media screen and (min-width: 160em) {
   .header {
     padding: 0.8125rem 0;
   }
