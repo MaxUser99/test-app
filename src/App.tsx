@@ -1,5 +1,3 @@
-import React from 'react';
-import styles from './App.module.css';
 import Header from './components/ui/Header';
 import Users from './components/sections/Users';
 import UserForm from './components/sections/UserForm';

@@ -23,8 +23,8 @@
     "zod": "^3.21.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "dev": "webpack-dev-server --mode development --hot",
+    "build": "webpack --mode production",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -45,5 +45,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+
+    "responsive-loader": "^3.1.2",
+    "sharp": "^0.32.1",
+    "ts-loader": "^9.4.2",
+    "webpack-cli": "^5.1.1"
   }
 }

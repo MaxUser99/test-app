@@ -1,6 +1,7 @@
 import Button from '../../ui/Button';
 import Container from '../../ui/Container';
 import styles from './Hero.module.css';
+// import image from '../../../../public/assets/heroImage.jpeg';
 
 export default function Hero() {
   return (
@@ -17,6 +18,7 @@ export default function Hero() {
           Development keeps evolving.
         </p>
         <Button>Sign up</Button>
+        {/* <img src={image} alt='' style={{ width: '100%' }} /> */}
       </section>
     </Container>
   );

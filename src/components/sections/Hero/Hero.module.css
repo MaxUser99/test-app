@@ -2,10 +2,8 @@
   padding: 2.5rem 1rem 4.4375rem;
   color: var(--white-color);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('/public/assets/heroImage.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom 15% center;
+    url('/public/assets/heroImage.jpeg?size=768') bottom 15% center / cover
+      no-repeat;
   overflow: hidden;
   margin-bottom: 8.75rem; /*140px*/
 }
@@ -27,10 +25,16 @@
 @media screen and (min-width: 48em) {
   .hero {
     padding: 5.5625rem 1rem 5.5rem;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('/public/assets/heroImage.jpeg?size=1920') bottom 15% center / cover
+        no-repeat;
   }
 }
 @media screen and (min-width: 64em) {
   .hero {
     padding: 10.25rem 1rem;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('/public/assets/heroImage.jpeg?size=2560') bottom 15% center / cover
+        no-repeat;
   }
 }
