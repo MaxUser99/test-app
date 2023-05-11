@@ -20,7 +20,13 @@ export const TextField = forwardRef<HTMLInputElement, IProps>(
         className={cx(styles.textField, className, {
           [styles.textFieldError]: error,
         })}>
-        <input className={styles.input} id={id} {...inputProps} ref={ref} />
+        <input
+          className={styles.input}
+          id={id}
+          placeholder=' ' // is necessary to make placeholder work properly
+          {...inputProps}
+          ref={ref}
+        />
         <label className={styles.label} htmlFor={id}>
           {label}
         </label>
