@@ -31,6 +31,7 @@
   margin: 0;
   padding: 0;
   line-height: 1.625rem;
+  width: 100%;
 }
 .userInfo a {
   text-decoration: none;

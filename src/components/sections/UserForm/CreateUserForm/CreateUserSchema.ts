@@ -33,4 +33,4 @@ export const createUserSchema = z.object({
     ),
 });
 
-export type CreateUserForm = z.infer<typeof createUserSchema>;
+export type CreateUserFormType = z.infer<typeof createUserSchema>;

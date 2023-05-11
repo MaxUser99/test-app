@@ -8,19 +8,19 @@ export const fetchUsers: QueryFunction<
   [string, number]
 > = ({ queryKey }) => {
   const [, page] = queryKey;
-  return new Promise((r) => {
-    return r({
-      count: 0,
-      page: 0,
-      success: false,
-      total_pages: 0,
-      total_users: 0,
-      users: [],
-    });
-  });
-  // return fetch(
-  //   `https://frontend-test-assignment-api.abz.agency/api/v1/users?page=${page}&count=${USERS_PER_PAGE}`
-  // ).then((res) => res.json());
+  // return new Promise((r) => {
+  //   return r({
+  //     count: 0,
+  //     page: 0,
+  //     success: false,
+  //     total_pages: 0,
+  //     total_users: 0,
+  //     users: [],
+  //   });
+  // });
+  return fetch(
+    `https://frontend-test-assignment-api.abz.agency/api/v1/users?page=${page}&count=${USERS_PER_PAGE}`
+  ).then((res) => res.json());
 };
 
 export const createUser: MutationFunction<number, [string, FormData]> = (
@@ -32,6 +32,11 @@ export const createUser: MutationFunction<number, [string, FormData]> = (
     headers: { Token: token },
     body: formData,
   })
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error('request error');
+      }
+      return res.json();
+    })
     .then((res) => res.user_id);
 };

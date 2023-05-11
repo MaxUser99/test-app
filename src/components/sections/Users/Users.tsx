@@ -12,7 +12,14 @@ export default function UsersList() {
   const [page, setPage] = useState(1);
   const [users, setUsers] = useState<IUser[]>([]);
   const { data: queryResponse } = useQuery(['users', page], fetchUsers, {
-    onSuccess: (data) => setUsers((prev) => [...prev, ...data.users]),
+    onSuccess: (data) => {
+      setUsers((prev) => {
+        const newUsers = data.users.filter(
+          (user) => !prev.some((prevUser) => prevUser.id === user.id)
+        );
+        return [...prev, ...newUsers];
+      });
+    },
   });
 
   function loadMoreClickHandler() {
