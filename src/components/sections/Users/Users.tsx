@@ -1,7 +1,6 @@
 import cx from 'classnames';
 import { useState } from 'react';
 import { useQuery } from 'react-query';
-import { useInView } from 'react-intersection-observer';
 import Container from '../../ui/Container';
 import styles from './Users.module.css';
 import UserCard from '../../ui/UserCard';
@@ -10,14 +9,9 @@ import { IUser } from '../../../types/IUser';
 import { fetchUsers } from '../../../queries/userQueries';
 
 export default function UsersList() {
-  const [containerRef, inView] = useInView({
-    threshold: 0.25,
-    triggerOnce: true,
-  });
   const [page, setPage] = useState(1);
   const [users, setUsers] = useState<IUser[]>([]);
   const { data: queryResponse } = useQuery(['users', page], fetchUsers, {
-    enabled: inView,
     onSuccess: (data) => {
       setUsers((prev) => {
         const newUsers = data.users.filter(
@@ -35,11 +29,7 @@ export default function UsersList() {
   const hideLoadMoreButton = page >= (queryResponse?.total_pages || 0);
 
   return (
-    <Container
-      className={styles.section}
-      ref={containerRef}
-      as='section'
-      id='users'>
+    <Container className={styles.section} as='section' id='users'>
       <h2 className={styles.heading}>Working with GET request</h2>
       <ul className={styles.usersList}>
         {users.map((user) => (

@@ -1,7 +1,7 @@
 import Button from '../../ui/Button';
+import LinkButton from '../../ui/Button/LinkButton';
 import Container from '../../ui/Container';
 import styles from './Hero.module.css';
-// import image from '../../../../public/assets/heroImage.jpeg';
 
 export default function Hero() {
   return (
@@ -17,8 +17,7 @@ export default function Hero() {
           mind. They should also be excited to learn, as the world of Front-End
           Development keeps evolving.
         </p>
-        <Button>Sign up</Button>
-        {/* <img src={image} alt='' style={{ width: '100%' }} /> */}
+        <LinkButton href='#sign-up'>Sign Up</LinkButton>
       </section>
     </Container>
   );
