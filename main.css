@@ -124,11 +124,12 @@ h6 {
     padding: 0.8125rem 3.75rem;
   }
 }
-@media screen and (min-width: 160em) {
+@media screen and (min-width: 73.125rem) { /* 1170px */
   .ZJ2sOyNbiER_D0qjIQI8 {
     padding: 0.8125rem 0;
   }
 }
+
 .wY4lL7O37oE5UW5bx_M7 {
   display: flex;
   flex-direction: column;
