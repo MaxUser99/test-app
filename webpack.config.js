@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = ({ mode } = { mode: 'production' }) => ({
   mode,
@@ -16,6 +17,15 @@ module.exports = ({ mode } = { mode: 'production' }) => ({
   module: {
     rules: [
       {
+        test: /\.html$/,
+        include: path.resolve(__dirname, 'public'),
+        use: [
+          {
+            loader: 'html-loader',
+          },
+        ],
+      },
+      {
         test: /\.(ts|tsx)$/,
         loader: 'ts-loader',
         exclude: /node_modules/,
@@ -25,18 +35,26 @@ module.exports = ({ mode } = { mode: 'production' }) => ({
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
-        test: /\.(svg)$/i,
-        type: 'asset/resource',
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'svg-url-loader',
+            options: {
+              limit: 10000,
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
-        type: 'asset',
         type: 'javascript/auto',
         use: [
           {
             loader: 'responsive-loader',
             options: {
               adapter: require('responsive-loader/sharp'),
+              outputPath: 'assets',
+              publcPath: 'assets',
             },
           },
         ],
@@ -45,7 +63,14 @@ module.exports = ({ mode } = { mode: 'production' }) => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: 'public/index.html',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: './public/manifest.json' },
+        { from: './public/logo192.png' },
+        { from: './public/logo512.png' },
+      ],
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',

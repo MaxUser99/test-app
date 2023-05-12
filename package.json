@@ -2,6 +2,7 @@
   "name": "latest-test-react-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://maxuser99.github.io/test-app",
   "dependencies": {
     "@fontsource/nunito": "^4.5.12",
     "@hookform/resolvers": "^3.1.0",
@@ -16,6 +17,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
+    "react-intersection-observer": "^9.4.3",
     "react-query": "^3.39.3",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
@@ -26,6 +28,8 @@
     "dev": "webpack-dev-server --mode development --hot",
     "build": "webpack --mode production",
     "test": "react-scripts test",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -47,9 +51,12 @@
     ]
   },
   "devDependencies": {
-
+    "copy-webpack-plugin": "^11.0.0",
+    "gh-pages": "^5.0.0",
+    "html-loader": "^4.2.0",
     "responsive-loader": "^3.1.2",
     "sharp": "^0.32.1",
+    "svg-url-loader": "^8.0.0",
     "ts-loader": "^9.4.2",
     "webpack-cli": "^5.1.1"
   }

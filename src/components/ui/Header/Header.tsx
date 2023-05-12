@@ -1,6 +1,7 @@
 import LinkButton from '../Button/LinkButton';
 import Container from '../Container';
 import styles from './Header.module.css';
+import logo from '../../../../public/assets/Logo.svg';
 
 export default function Header() {
   return (
@@ -10,7 +11,7 @@ export default function Header() {
           className={styles.logo}
           width={104}
           height={26}
-          src={`./assets/Logo.svg`}
+          src={logo}
           alt='logo'
         />
         <nav>

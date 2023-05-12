@@ -1,10 +1,8 @@
-import { useQuery } from 'react-query';
 import Button from '../../../ui/Button';
 import FileUpload from '../../../ui/FileUpload';
 import RadioGroup from '../../../ui/RadioGroup';
 import TextField from '../../../ui/TextField';
 import styles from './CreateUserForm.module.css';
-import { fetchPositions } from '../../../../queries/positionQueries';
 import { useForm } from 'react-hook-form';
 import {
   ACCEPTED_IMAGE_TYPES,
@@ -13,13 +11,14 @@ import {
 } from './CreateUserSchema';
 import { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { IPosition } from '../../../../types/IPositions';
 
 interface IProps {
   onSubmit: (form: HTMLFormElement) => void;
+  positions: IPosition[];
 }
 
-export default function CreateUserForm({ onSubmit }: IProps) {
-  const { data: positions = [] } = useQuery('positions', fetchPositions);
+export default function CreateUserForm({ onSubmit, positions }: IProps) {
   const [fileName, setFileName] = useState('');
   const {
     register,
