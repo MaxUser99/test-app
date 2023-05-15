@@ -8,7 +8,11 @@ import styles from './UserForm.module.css';
 import UserCreated from './UserCreated';
 import { useInView } from 'react-intersection-observer';
 
-export default function UserForm() {
+interface IProps {
+  resetPage: () => void;
+}
+
+export default function UserForm({ resetPage }: IProps) {
   const [containerRef, inView] = useInView({
     threshold: 0.25,
     triggerOnce: true,
@@ -21,6 +25,7 @@ export default function UserForm() {
     enabled: inView,
   });
   const mutation = useMutation(createUser, {
+    onSuccess: () => resetPage(),
     onSettled: () => refetch(),
   });
 

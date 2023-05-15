@@ -8,23 +8,32 @@ import Button from '../../ui/Button';
 import { IUser } from '../../../types/IUser';
 import { fetchUsers } from '../../../queries/userQueries';
 
-export default function UsersList() {
-  const [page, setPage] = useState(1);
+interface IProps {
+  page: number;
+  resetData: boolean;
+  incrementPage: () => void;
+}
+
+export default function UsersList({ page, resetData, incrementPage }: IProps) {
   const [users, setUsers] = useState<IUser[]>([]);
   const { data: queryResponse } = useQuery(['users', page], fetchUsers, {
     onSuccess: (data) => {
       setUsers((prev) => {
+        if (resetData) {
+          return [...data.users].sort(
+            (a, b) => b.registration_timestamp - a.registration_timestamp
+          );
+        }
+
         const newUsers = data.users.filter(
           (user) => !prev.some((prevUser) => prevUser.id === user.id)
         );
-        return [...prev, ...newUsers];
+        return [...prev, ...newUsers].sort(
+          (a, b) => b.registration_timestamp - a.registration_timestamp
+        );
       });
     },
   });
-
-  function loadMoreClickHandler() {
-    setPage((prev) => prev + 1);
-  }
 
   const hideLoadMoreButton = page >= (queryResponse?.total_pages || 0);
 
@@ -41,7 +50,7 @@ export default function UsersList() {
           [styles.hidden]: hideLoadMoreButton,
         })}
         disabled={hideLoadMoreButton}
-        onClick={loadMoreClickHandler}>
+        onClick={incrementPage}>
         Show more
       </Button>
     </Container>
